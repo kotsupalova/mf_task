@@ -17,7 +17,6 @@ public class NavigateSteps {
     @Step
     public void open_women_home_page() {
         womanHomePage.open();
-
     }
 
     @Step
@@ -34,7 +33,6 @@ public class NavigateSteps {
     public void verify_country_name_in_the_top_left_corner_of_the_page(String country) {
         String currentPageCountry = headerMenu.getCountryNameFromTheTopLeftCorner();
         Assert.assertEquals(country, currentPageCountry);
-
     }
 
 }
