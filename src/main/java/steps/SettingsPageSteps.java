@@ -1,10 +1,12 @@
 package steps;
 
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import pages.SettingsPage;
 
 public class SettingsPageSteps {
 
+    @Steps
     private SettingsPage settingsPage;
 
     @Step
@@ -16,4 +18,5 @@ public class SettingsPageSteps {
     public void save_the_settings() {
         settingsPage.clickSubmitButton();
     }
+
 }

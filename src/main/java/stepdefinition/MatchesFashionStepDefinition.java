@@ -1,4 +1,4 @@
-package step_definition;
+package stepdefinition;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -20,12 +20,12 @@ public class MatchesFashionStepDefinition {
     @Steps
     private OtherSteps otherSteps;
 
-    private String pageTitle;
+    private String pageValue;
 
     @Given("^I am on the website|I am on the Shop page$")
     public void iAmOnTheWebsite() {
         navigateSteps.open_women_home_page();
-        pageTitle = otherSteps.get_page_title();
+        pageValue = otherSteps.get_page_value();
     }
 
     @When("^I click the country name in the top-left corner of the page$")
@@ -38,8 +38,8 @@ public class MatchesFashionStepDefinition {
         navigateSteps.should_see_settings_page();
     }
 
-    @And("^I select ([A-Z]\\w+\\s?) as my shipping destination$")
-    public void iSelectAustriaAsMyShippingDestination(String country) {
+    @And("^I select '(.*)' as my shipping destination$")
+    public void iSelectCountryAsMyShippingDestination(String country) {
         settingsPageSteps.select_shipping_country(country);
     }
 
@@ -50,6 +50,12 @@ public class MatchesFashionStepDefinition {
 
     @Then("^I returned to the same Shop page$")
     public void iReturnedToTheSameShopPage() {
-        otherSteps.verify_current_title(pageTitle);
+        otherSteps.verify_current_page_value(pageValue);
     }
+
+    @And("^my country in the top-left corner of the page is '(.*)'$")
+    public void myCountryInTheTopLeftCornerOfThePageIsCountry(String country) {
+        navigateSteps.verify_country_name_in_the_top_left_corner_of_the_page(country);
+    }
+
 }

@@ -10,7 +10,15 @@ Feature: Multiple destination, currency, language support
   Scenario: Customer can select settings and return on the same page
     Given I am on the Shop page
     When I click the country name in the top-left corner of the page
-    And I select Austria as my shipping destination
+    And I select 'Austria' as my shipping destination
     And I save the settings
     Then I returned to the same Shop page
+
+  Scenario: Customer selects shipping destination
+    Given I am on the website
+    And my country in the top-left corner of the page is 'United Kingdom'
+    When I click the country name in the top-left corner of the page
+    And I select 'Germany' as my shipping destination
+    And I save the settings
+    Then my country in the top-left corner of the page is 'Germany'
 

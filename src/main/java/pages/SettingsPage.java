@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SettingsPage extends AbstractHeaderPage {
+public class SettingsPage extends HeaderMenu {
 
     @FindBy(className = "settings__submit__button")
     private WebElement submitButton;
@@ -14,6 +14,9 @@ public class SettingsPage extends AbstractHeaderPage {
 
     @FindBy(id = "command")
     private WebElement commandForm;
+
+    @FindBy(id = "shippingCountry")
+    WebElement select;
 
     public void selectShippingCountry(String country) {
         form.findElement(By.id("shippingCountry")).sendKeys(country);
