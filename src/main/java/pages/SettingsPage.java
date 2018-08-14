@@ -4,16 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SettingsPage extends AbstractBasePage {
+public class SettingsPage extends AbstractHeaderPage {
 
     @FindBy(className = "settings__submit__button")
-    WebElement submitButton;
+    private WebElement submitButton;
 
     @FindBy(id = "command")
-    WebElement form;
+    private WebElement form;
 
     @FindBy(id = "command")
-    WebElement commandForm;
+    private WebElement commandForm;
 
     public void selectShippingCountry(String country) {
         form.findElement(By.id("shippingCountry")).sendKeys(country);

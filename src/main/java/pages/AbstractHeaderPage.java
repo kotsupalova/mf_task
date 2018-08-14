@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * This class allows to use 'Header' and 'Button' elements from any WebPage
  */
-public abstract class AbstractBasePage extends PageObject {
+public abstract class AbstractHeaderPage extends PageObject {
 
     @FindBy(id = "shipping-country")
     private WebElement shippingCountryLink;
