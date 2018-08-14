@@ -4,26 +4,23 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import steps.NavigateSteps;
 import steps.OtherSteps;
 import steps.SettingsPageSteps;
 
 public class MatchesFashionStepDefinition {
-    //TODO
-    private final String REG_EXP = "(([A-Z]\\w+\\s?)+(\\(|\\-\\s)?([A-Z]?\\w+\\s?)*(\\))*)";
 
     @Steps
-    NavigateSteps navigateSteps;
+    private NavigateSteps navigateSteps;
 
     @Steps
-    SettingsPageSteps settingsPageSteps;
+    private SettingsPageSteps settingsPageSteps;
 
     @Steps
-    OtherSteps otherSteps;
+    private OtherSteps otherSteps;
 
-    String pageTitle;
+    private String pageTitle;
 
     @Given("^I am on the website|I am on the Shop page$")
     public void iAmOnTheWebsite() {
@@ -31,17 +28,9 @@ public class MatchesFashionStepDefinition {
         pageTitle = otherSteps.get_page_title();
     }
 
-    //?
-//    @Given("^I am on the product details page$")
-//    public void iAmOnTheProductDetailsPage() {
-//        navigateSteps.open_product_detail_page();
-//        pageTitle = otherSteps.get_page_title();
-//        System.out.println("!!! PAGE TITLE = " + pageTitle);
-//    }
-
     @When("^I click the country name in the top-left corner of the page$")
     public void iClickTheCountryNameInTheTopLeftCornerOfThePage() {
-//        navigateSteps.click_shipping_country_link();
+        navigateSteps.click_shipping_country_link();
     }
 
     @Then("^I am taken to the Settings page$")

@@ -5,7 +5,7 @@ import pages.SettingsPage;
 
 public class SettingsPageSteps {
 
-    SettingsPage settingsPage;
+    private SettingsPage settingsPage;
 
     @Step
     public void select_shipping_country(String country){
@@ -16,6 +16,4 @@ public class SettingsPageSteps {
     public void save_the_settings() {
         settingsPage.clickSubmitButton();
     }
-
-
 }
